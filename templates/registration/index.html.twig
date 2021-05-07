@@ -3,8 +3,12 @@
 {% block title %}Hello RegistrationController!{% endblock %}
 
 {% block content %}
+<section id="form-signin" class="text-center">
+	<form class="form-signin">
+		<h1 class="h3 mb-3 font-weight-normal">Enregistrez-vous</h1>
+		{{ form(form) }}
+	</form>
+	<button class="btn btn-lg btn-primary btn-blockform-signin" type="submit">Soumettre le formulaire</button>
+</section>
 
-<div class="example-wrapper">
-    <h1> Inscription ! ✅</h1>    
-</div>
 {% endblock %}
