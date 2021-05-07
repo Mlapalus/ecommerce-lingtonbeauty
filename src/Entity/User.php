@@ -48,7 +48,12 @@ class User implements UserInterface
     {
         return $this->id;
     }
-
+    
+    /**
+     * getEmail
+     *
+     * @return string
+     */
     public function getEmail(): ?string
     {
         return $this->email;
