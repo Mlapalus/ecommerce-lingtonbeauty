@@ -1,18 +1,18 @@
 {% include "fragments/_header.html.twig" %}
-	<body>
-		<header>
-			{% include "fragments/_navbar.html.twig" %}
-		</header>
+<body>
+	<header>
+		{% include "fragments/_navbar.html.twig" %}
+	</header>
+	{% if block('carousel') is defined %}
+		{% include "fragments/_carousel.html.twig" %}
+	{% endif %}
 
-		<main role="main">
-			{% include "fragments/_carousel.html.twig" %}
-
-			<div class="container marketing">
-				{% block content %}{% endblock %}
-			</div>
-			
-			{% include "fragments/_footer.html.twig" %}
-		</main>
-		{% include "fragments/_scriptfiles.html.twig" %}
-	</body>
+	<main role="main">
+		<div class="container marketing {% if block('carousel') is not  defined %}mt-5{% endif %}">
+			{% block content %}{% endblock %}
+		</div>
+		{% include "fragments/_footer.html.twig" %}
+	</main>
+	{% include "fragments/_scriptfiles.html.twig" %}
+</body>
 </html>
