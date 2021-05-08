@@ -6,18 +6,27 @@
 	<div class="collapse navbar-collapse" id="navbarCollapse">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="{{path('home')}}">Accueil
-					<span class="sr-only">(current)</span>
-				</a>
+				<a class="nav-link" href="{{path('home')}}">Accueil</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="{{path('home')}}">Shopping</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="{{path('home')}}">A Propos</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="{{path('home')}}">Contact</a>
 			</li>
 		</ul>
+		<div class="navbar-item-custom">
 		{% if app.user %}
-			Bonjour, {{ app.user.firstname }} | 
+			<span>Bonjour, {{ app.user.firstname }} | </span> 
 				<a class="" href="{{ path('account') }}">Mon compte | </a>
 				<a class="" href="{{ path('app_logout') }}">Se déconnecter</a>
 		{% else %}
 				<a class="" href="{{path('app_login')}}">Se connecter | </a>
 				<a class="" href="{{path('registration')}}">Inscription</a>
 		{% endif %}
+		</div>
 	</div>
 </nav>
