@@ -4,14 +4,24 @@
 
 {% block content %}
 <section id="form-signin" class="text-center">
-	<form class="form-signin">
+	<div class="form-signin">
 		<h1 class="h3 mb-3 font-weight-normal">Enregistrez-vous</h1>
 		{{ form_start(form) }}
-			{{ form_widget(form) }}
+			<div class="">
+				{{ form_errors(form) }}
+			</div>
 
-			<input type="submit"/>
+			{{ form_row(form.firstname) }}
+			<small>{{ form_help(form.firstname) }}</small>
+			{{ form_row(form.lastname) }}
+			<small>{{ form_help(form.lastname) }}</small>
+			{{ form_row(form.email) }}
+			<small>{{ form_help(form.email) }}</small>
+			{{ form_row(form.password) }}
+			<small>{{ form_help(form.password) }}</small>
+			<button type="submit" class="btn btn-primary">Créer</button>
 		{{ form_end(form) }}
-	</form>
+	</div>
 </section>
 
 {% endblock %}
