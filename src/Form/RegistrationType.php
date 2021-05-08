@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class RegistrationType extends AbstractType
 {
@@ -21,6 +22,7 @@ class RegistrationType extends AbstractType
                 'label' => 'Votre Prénom',
                 'required' => true,
                 'constraints' => [
+                    new NotBlank(),
                     new Length(['min' => 3, 'max' => 20])
                 ],
                 'attr' => [
@@ -31,6 +33,7 @@ class RegistrationType extends AbstractType
                 'label' => 'Votre Nom',
                 'required' => true,
                 'constraints' => [
+                    new NotBlank(),
                     new Length(['min' => 3, 'max' => 20])
                 ],
                 'attr' => [
@@ -40,6 +43,9 @@ class RegistrationType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'Votre Email',
                 'required' => true,
+                'constraints' => [
+                    new NotBlank()
+                ],
                 'attr' => [
                     'placeholder' => "Saisissez votre email"
                 ]
@@ -52,6 +58,7 @@ class RegistrationType extends AbstractType
                 'first_options' => ['label' => 'Mot de Passe'],
                 'second_options' => ['label' => 'Confirmez votre mot de passe'],
                 'constraints' => [
+                    new NotBlank(),
                     new Length(['min' => 8])
                 ],
                 'attr' => [
