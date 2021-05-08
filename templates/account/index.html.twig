@@ -3,9 +3,16 @@
 {% block title %}Mon compte{% endblock %}
 
 {% block content %}
+<div class="container-fluid">
+	<div class="row">
+		{% include "account/fragments/_sidebarAccount.html.twig" %}
 
-<div class="example-wrapper">
-    <h1>Mon Compte ✅</h1>
-
+		<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+			<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+				<h1 class="h2">Les détails de votre compte</h1>
+			</div>
+		</main>
+	</div>
 </div>
+
 {% endblock %}
