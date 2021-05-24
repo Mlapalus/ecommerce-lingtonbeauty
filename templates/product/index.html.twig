@@ -3,27 +3,25 @@
 {% block title %}Nos Produits{% endblock %}
 
 {% block content %}
-<div class="album py-5 bg-light">
-	<div class="container">
-		<div class="row">
-            {% for product in products %}
-                <div class="col-md-4">
-	                <div class="card mb-4 shadow-sm">
-                        <img src="/upload/{{product.image}}" class="card-img-top" height="225" width="100%" alt="{{product.subtitle}}">
-		                <div class="card-body">
-                            <h5 class="text-bold text-upper">{{product.name}}</h5>
-			                <p class="card-text">{{product.description}}</p>
-			                <div class="d-flex justify-content-between align-items-center">
-				                <div class="btn-group">
-					                <a href="{{path('product', {'slug' : product.slug}) }}"><button type="button" class="btn btn-sm btn-outline-secondary">Détails</button></a>
-				                </div>
-				                <small class="text-muted">{{product.price / 100 | number_format(2)}} &euro; </small>
-			                </div>
-		                </div>
-	                </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
+<div class="row">
+	<div class="col-md-3">
+		<h3>Filtrer</h3>
+		{{ form(form) }}
+
+	</div>
+	<div class="col-md-9">
+		<div class="album py-5 bg-light">
+			<div class="container">
+				<h3>Nos produits</div>
+				<div class="row">
+				{% for product in products %}
+					<div class="col-md-4">
+						{% include "/product/_card.html.twig" with {product : product} %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 </div>
+
 {% endblock %}
