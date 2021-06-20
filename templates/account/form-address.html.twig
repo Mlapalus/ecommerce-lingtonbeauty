@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MMes adresses
+{% endblock %}
+
+{% block content %}
+
+	<div class="container-fluid">
+		<div class="row">
+			{% include "account/fragments/_sidebarAccount.html.twig" %}
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+					<h1 class="h2">Renseigner votre adresse</h1>
+				</div>
+                <section id="form-signin" class="text-center">
+	                <div class="form-signin">
+		                <h1 class="h3 mb-3 font-weight-normal">Votre adresse</h1>
+		                {{ form_start(form) }}
+		                <div class="">
+			                {{ form_errors(form) }}
+		                </div>
+                        <div>
+                            {{ form_row(form.name) }}
+                            <small>{{ form_help(form.name) }}</small>
+                        </di>
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ form_row(form.firstName) }}
+                                <small>{{ form_help(form.firstName) }}</small>
+                            </div>
+                            <div class="col-md-6">
+		                        {{ form_row(form.lastName) }}
+		                        <small>{{ form_help(form.lastName) }}</small>
+                            </div>
+                        </div>
+		                    {{ form_row(form.company) }}
+		                    <small>{{ form_help(form.company) }}</small>
+		                    {{ form_row(form.adress) }}
+		                    <small>{{ form_help(form.adress) }}</small>
+                            {{ form_row(form.postal) }}
+                            <small>{{ form_help(form.postal) }}</small>
+                            {{ form_row(form.city) }}
+                            <small>{{ form_help(form.city) }}</small>
+                            {{ form_row(form.country) }}
+                            <small>{{ form_help(form.country) }}</small>
+                            {{ form_row(form.phone) }}
+                            <small>{{ form_help(form.phone) }}</small>
+		                    <button type="submit" class="btn btn-primary">Valider</button>
+		                {{ form_end(form) }}
+	                </div>
+                </section>
+		    </main>
+	    </div>
+    </div>
+
+{% endblock %}
+

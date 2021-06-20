@@ -23,6 +23,11 @@
 			<span>Bonjour, {{ app.user.firstname }} | </span> 
 				<a class="" href="{{ path('account') }}">Mon compte | </a>
 				<a class="" href="{{ path('app_logout') }}">Se déconnecter</a>
+				<a href="{{path('cart')}}" class="">
+					<img src="{{ asset('assets/img/icon/shopping-cart.png') }}" alt="Mon panier" class="shopping-cart">
+						<strong class="notification">3</strong>
+					</img>
+				</a>
 		{% else %}
 				<a class="" href="{{path('app_login')}}">Se connecter | </a>
 				<a class="" href="{{path('registration')}}">Inscription</a>
